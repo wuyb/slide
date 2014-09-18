@@ -8,6 +8,8 @@ exports.testReadTitle = function(test) {
     test.equals(2, slide.shapes.length);
     test.equals('ctrTitle', slide.shapes[0].type);
     test.equals('subTitle', slide.shapes[1].type);
+    test.equals('Title 1', slide.title);
+    test.equals('Subtitle 1', slide.subTitle);
     test.done();
   }, function(error) {
     test.fail();
