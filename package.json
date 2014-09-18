@@ -1,0 +1,30 @@
+{
+  "name": "slide",
+  "description": "A slide processing tool.",
+  "version": "0.0.1",
+  "author": "Yanbo Wu <yanbo.wu@gmail.com> (https://github.com/wuyb)",
+  "contributors": [
+  ],
+  "devDependencies": {
+    "nodeunit": "0.8.0"
+  },
+  "keywords": [
+    "slide",
+    "parser",
+    "pptx"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/wuyb/slide/master/LICENSE"
+    }
+  ],
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wuyb/slide.git"
+  },
+  "scripts": {
+    "test": "node test/run_tests.js"
+  }
+}

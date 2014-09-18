@@ -1,0 +1,1 @@
+*Slide processing toolset for Node.*

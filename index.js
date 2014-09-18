@@ -1,0 +1,1 @@
+export.PPTXParser = require('./lib/parsers/pptx');

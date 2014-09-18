@@ -1,0 +1,4 @@
+.travis.yml
+.gitignore
+node_modules
+test
