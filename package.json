@@ -6,7 +6,13 @@
   "contributors": [
   ],
   "devDependencies": {
-    "nodeunit": "0.8.0"
+    "nodeunit": "0.8.0",
+    "unzip": "0.1.11",
+    "stream-buffers": ">= 0.2.5",
+    "xpath": ">= 0.0.7",
+    "xmldom": ">= 0.1.19",
+    "underscore": "1.7.0",
+    "underscore.string":"2.3.2"
   },
   "keywords": [
     "slide",
