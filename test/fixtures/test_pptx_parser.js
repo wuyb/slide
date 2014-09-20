@@ -32,3 +32,28 @@ exports.testReadText = function(test) {
     test.done();
   });
 }
+
+// test: multiple pages (one title page, one regular page)
+exports.testReadTextInMultiPages = function(test) {
+  var parser = new PPTXParser();
+  parser.parse('../test_files/text_multi_pages.pptx', function(presentation) {
+    test.equals(2, presentation.slides.length);
+    var slide1 = presentation.slides[0];
+    test.equals(2, slide1.shapes.length);
+    test.equals('ctrTitle', slide1.shapes[0].type);
+    test.equals('subTitle', slide1.shapes[1].type);
+    test.equals('Title 1', slide1.title);
+    test.equals('Subtitle 1', slide1.subTitle);
+
+    var slide2 = presentation.slides[1];
+    test.equals(2, slide2.shapes.length);
+    test.equals('title', slide2.shapes[0].type);
+    test.equals('Page 1', slide2.shapes[0].text);
+    test.equals('', slide2.shapes[1].type);
+    test.equals('Page 1 item 1Page 1 item 2', slide2.shapes[1].text);
+    test.done();
+  }, function(error) {
+    test.fail();
+    test.done();
+  });
+}
