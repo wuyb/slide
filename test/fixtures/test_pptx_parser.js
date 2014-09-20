@@ -50,3 +50,21 @@ exports.testReadTextInMultiPages = function(test) {
     test.done();
   });
 }
+
+// test: single page with single picture
+exports.testReadPicture = function(test) {
+  var parser = new PPTXParser();
+  parser.parse('../test_files/picture.pptx', function(presentation) {
+    test.equals(1, presentation.slides.length);
+    var slide = presentation.slides[0];
+    test.equals(0, slide.shapes.length);
+    test.equals(1, slide.pictures.length);
+    var picture = slide.pictures[0];
+    test.equals('github.png', picture.description);
+    test.equals('rId2', picture.relationshipId);
+    test.done();
+  }, function(error) {
+    test.fail();
+    test.done();
+  });
+}
