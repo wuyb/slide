@@ -9,8 +9,6 @@ exports.testReadTitle = function(test) {
     test.equals(2, slide.shapes.length);
     test.equals('ctrTitle', slide.shapes[0].type);
     test.equals('subTitle', slide.shapes[1].type);
-    test.equals('Title 1', slide.title);
-    test.equals('Subtitle 1', slide.subTitle);
     test.done();
   }, function(error) {
     test.fail();
@@ -25,7 +23,6 @@ exports.testReadText = function(test) {
     test.equals(1, presentation.slides.length);
     var slide = presentation.slides[0];
     test.equals(1, slide.shapes.length);
-    test.equals('Text 1', slide.shapes[0].text);
     test.done();
   }, function(error) {
     test.fail();
@@ -42,15 +39,11 @@ exports.testReadTextInMultiPages = function(test) {
     test.equals(2, slide1.shapes.length);
     test.equals('ctrTitle', slide1.shapes[0].type);
     test.equals('subTitle', slide1.shapes[1].type);
-    test.equals('Title 1', slide1.title);
-    test.equals('Subtitle 1', slide1.subTitle);
 
     var slide2 = presentation.slides[1];
     test.equals(2, slide2.shapes.length);
     test.equals('title', slide2.shapes[0].type);
-    test.equals('Page 1', slide2.shapes[0].text);
     test.equals('', slide2.shapes[1].type);
-    test.equals('Page 1 item 1Page 1 item 2', slide2.shapes[1].text);
     test.done();
   }, function(error) {
     test.fail();
